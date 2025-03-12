@@ -1,7 +1,4 @@
-package com.example.conversormoedas.viewmodel
 
-import CurrencyRepository
-import CurrencyViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 

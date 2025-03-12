@@ -1,7 +1,3 @@
-package com.example.currencyconverter
-
-import CurrencyRepository
-import CurrencyViewModel
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button

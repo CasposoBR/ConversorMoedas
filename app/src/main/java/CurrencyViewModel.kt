@@ -1,4 +1,4 @@
-
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,24 +7,32 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class CurrencyViewModel(private val repository: CurrencyRepository) : ViewModel() {
-
     private val _exchangeRate = MutableLiveData<Double>()
     val exchangeRate: LiveData<Double> get() = _exchangeRate
 
     fun convertCurrency(amount: Double, from: String, to: String) {
-        repository.getExchangeRates(from).enqueue(object : Callback<ExchangeRatesResponse> {
-            override fun onResponse(call: Call<ExchangeRatesResponse>, response: Response<ExchangeRatesResponse>) {
+        // Chama a API para obter a taxa de câmbio
+        RetrofitInstance.api.getExchangeRates(base = from).enqueue(object : Callback<ExchangeRatesResponse> {
+            override fun onResponse(
+                call: Call<ExchangeRatesResponse>,
+                response: Response<ExchangeRatesResponse>
+            ) {
                 if (response.isSuccessful) {
-                    val rates = response.body()?.rates
-                    val rate = rates?.get(to)
+                    val exchangeRates = response.body()?.rates
+                    val rate = exchangeRates?.get(to)
                     if (rate != null) {
-                        _exchangeRate.value = amount * rate
+                        val result = amount * rate
+                        _exchangeRate.postValue(result) // Atualiza a LiveData com o valor convertido
+                    } else {
+                        Log.e("CurrencyConverter", "Taxa de câmbio não encontrada para a moeda: $to")
                     }
+                } else {
+                    Log.e("CurrencyConverter", "Erro na resposta da API: ${response.errorBody()}")
                 }
             }
 
             override fun onFailure(call: Call<ExchangeRatesResponse>, t: Throwable) {
-                _exchangeRate.value = null
+                Log.e("CurrencyConverter", "Falha na chamada da API: ${t.message}")
             }
         })
     }
