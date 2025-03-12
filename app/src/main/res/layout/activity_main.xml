@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!-- EditText para digitar o valor -->
+    <EditText
+        android:id="@+id/editAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite o valor em USD"
+        android:inputType="numberDecimal"
+        android:textSize="18sp"
+        android:paddingBottom="16dp" />
+
+    <!-- Container para os dois TextViews -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- TextView Esquerdo -->
+        <TextView
+            android:id="@+id/txtLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textSize="18sp"
+            android:paddingEnd="16dp" />
+
+        <!-- Botão para trocar os TextViews -->
+        <Button
+            android:id="@+id/btnSwap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trocar"
+            android:textSize="16sp" />
+
+        <!-- TextView Direito -->
+        <TextView
+            android:id="@+id/txtRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BRL"
+            android:textSize="18sp"
+            android:paddingStart="16dp" />
+    </LinearLayout>
+
+    <!-- Botão para converter -->
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Converter"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Resultado da conversão -->
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultado: "
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:gravity="center" />
+</LinearLayout>
