@@ -1,3 +1,8 @@
+package com.example.conversormoedas
+
+import CurrencyRepository
+import CurrencyViewModel
+import CurrencyViewModelFactory
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -5,7 +10,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.conversormoedas.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         // Inicializando o ViewModel
         val repository = CurrencyRepository()
-        viewModel = ViewModelProvider(this, CurrencyViewModelFactory(repository))[CurrencyViewModel::class.java]
+        viewModel = ViewModelProvider(this,
+            CurrencyViewModelFactory(repository)
+        )[CurrencyViewModel::class.java]
 
         // Referências para os componentes de UI
         val editAmount = findViewById<EditText>(R.id.editAmount)
@@ -50,11 +56,9 @@ class MainActivity : AppCompatActivity() {
 
         // Observador para atualizar o resultado quando a taxa de câmbio for obtida
         viewModel.exchangeRate.observe(this) { result ->
-            if (result != null) {
-                txtResult.text = "Resultado: $result ${txtRight.text}"
-            } else {
-                txtResult.text = "Erro ao obter a taxa de câmbio"
-            }
+            txtResult.text = "Resultado: $result"
+        }
+
+
         }
     }
-}

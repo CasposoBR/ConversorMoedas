@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center">
+    android:gravity="center"
+    >
 
     <!-- EditText para digitar o valor -->
     <EditText
@@ -66,6 +67,7 @@
         android:layout_height="wrap_content"
         android:text="Resultado: "
         android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_marginTop="16dp"
         android:gravity="center" />
 </LinearLayout>
