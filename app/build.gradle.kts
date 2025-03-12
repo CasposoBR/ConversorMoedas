@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.conversormoedas"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.conversormoedas"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -50,6 +50,16 @@ android {
 }
 
 dependencies {
+//Dependências manuais
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.livedata.ktx)
+
+
+//Dependências manuais
+
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
