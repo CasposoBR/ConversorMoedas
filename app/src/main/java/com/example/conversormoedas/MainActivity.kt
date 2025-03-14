@@ -42,20 +42,21 @@ class MainActivity : AppCompatActivity() {
 
         // Função para converter o valor
         btnConvert.setOnClickListener {
-            val amount = editAmount.text.toString().toDoubleOrNull() // Converte para Double
-            if (amount != null) {
-                // Log para ver o valor e as moedas
-                Log.d("CurrencyConverter", "Converting: Amount = $amount, From = ${txtLeft.text}, To = ${txtRight.text}")
+            Log.d("CurrencyConverter", "Botão de conversão clicado!")
 
-                // Aqui chamamos a função do ViewModel para converter a moeda
+            val amount = editAmount.text.toString().toDoubleOrNull()
+            if (amount != null) {
+                Log.d("CurrencyConverter", "Converting: Amount = $amount, From = ${txtLeft.text}, To = ${txtRight.text}")
                 viewModel.convertCurrency(amount, txtLeft.text.toString(), txtRight.text.toString())
             } else {
                 txtResult.text = "Por favor, insira um valor válido"
+                Log.e("CurrencyConverter", "Valor inserido inválido")
             }
         }
 
         // Observador para atualizar o resultado quando a taxa de câmbio for obtida
         viewModel.exchangeRate.observe(this) { result ->
+            Log.d("CurrencyConverter", "Taxa de câmbio recebida: $result")
             txtResult.text = "Resultado: $result"
         }
 
