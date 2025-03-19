@@ -51,6 +51,7 @@ android {
 
 dependencies {
 //Dependências manuais
+    implementation (libs.androidx.cardview)
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
     implementation (libs.androidx.lifecycle.viewmodel.ktx)

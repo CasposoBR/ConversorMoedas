@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Sombra -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#90000000"/> <!-- Cor da sombra (semi-transparente) -->
+        </shape>
+    </item>
+
+    <!-- Fundo do botão -->
+    <item android:left="2dp" android:top="2dp">
+        <shape android:shape="oval">
+            <solid android:color="#2196F3"/> <!-- Cor do fundo -->
+        </shape>
+    </item>
+
+</layer-list>

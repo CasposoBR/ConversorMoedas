@@ -5,50 +5,63 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
-    >
+    android:background="@android:color/white">
 
-    <!-- EditText para digitar o valor -->
+    <!-- Campo de entrada do valor -->
     <EditText
         android:id="@+id/editAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite o valor em USD"
+        android:hint="Digite o valor"
         android:inputType="numberDecimal"
         android:textSize="18sp"
-        android:paddingBottom="16dp" />
+        android:padding="12dp"
+        android:background="@drawable/rounded_background"
+        android:textAlignment="center"/>
 
-    <!-- Container para os dois TextViews -->
+    <!-- Container para os TextViews e botão de troca -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:gravity="center"
+        android:layout_marginTop="16dp">
 
-        <!-- TextView Esquerdo -->
+        <!-- Moeda Inicial -->
         <TextView
             android:id="@+id/txtLeft"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="USD"
-            android:textSize="18sp"
-            android:paddingEnd="16dp" />
+            android:padding="16dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_background"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
 
-        <!-- Botão para trocar os TextViews -->
-        <Button
+        <!-- Botão para troca das moedas -->
+        <ImageButton
             android:id="@+id/btnSwap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Trocar"
-            android:textSize="16sp" />
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_rotate_background"
+            android:src="@drawable/ic_rotate_foreground"
+        android:scaleType="centerInside"
+        android:padding="8dp"/>
 
-        <!-- TextView Direito -->
+        <!-- Moeda de destino -->
         <TextView
             android:id="@+id/txtRight"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="BRL"
-            android:textSize="18sp"
-            android:paddingStart="16dp" />
+            android:padding="16dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_background"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <!-- Botão para converter -->
@@ -58,7 +71,8 @@
         android:layout_height="wrap_content"
         android:text="Converter"
         android:textSize="18sp"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_rounded"/>
 
     <!-- Resultado da conversão -->
     <TextView
@@ -69,5 +83,5 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        android:gravity="center" />
+        android:gravity="center"/>
 </LinearLayout>

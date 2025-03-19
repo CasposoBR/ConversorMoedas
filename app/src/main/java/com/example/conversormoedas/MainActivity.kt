@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val editAmount = findViewById<EditText>(R.id.editAmount)
         val txtLeft = findViewById<TextView>(R.id.txtLeft)
         val txtRight = findViewById<TextView>(R.id.txtRight)
-        val btnSwap = findViewById<Button>(R.id.btnSwap)
+        val btnSwap = findViewById<ImageButton>(R.id.btnSwap)
         val btnConvert = findViewById<Button>(R.id.btnConvert)
         val txtResult = findViewById<TextView>(R.id.txtResult)
 
