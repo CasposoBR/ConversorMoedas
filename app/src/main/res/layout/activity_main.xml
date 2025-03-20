@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
-    android:background="@android:color/white">
+    android:background="@color/backgroundDark">
 
     <!-- Campo de entrada do valor -->
     <EditText
@@ -14,8 +14,9 @@
         android:layout_height="wrap_content"
         android:hint="Digite o valor"
         android:inputType="numberDecimal"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:padding="12dp"
+        android:textColor="@color/textPrimary"
         android:background="@drawable/rounded_background"
         android:textAlignment="center"/>
 
@@ -37,8 +38,8 @@
             android:padding="16dp"
             android:gravity="center"
             android:background="@drawable/rounded_background"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"/>
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"/>
 
         <!-- Botão para troca das moedas -->
         <ImageButton
@@ -60,8 +61,8 @@
             android:padding="16dp"
             android:gravity="center"
             android:background="@drawable/rounded_background"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"/>
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"/>
     </LinearLayout>
 
     <!-- Botão para converter -->
@@ -70,7 +71,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Converter"
-        android:textSize="18sp"
+        android:textColor="@color/textPrimary"
+        android:textSize="16sp"
         android:layout_marginTop="16dp"
         android:background="@drawable/button_rounded"/>
 
@@ -80,8 +82,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Resultado: "
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:textStyle="bold"
+        android:textColor="@color/textPrimary"
         android:layout_marginTop="16dp"
         android:gravity="center"/>
 </LinearLayout>

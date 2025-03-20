@@ -2,7 +2,7 @@
     <!-- Camada da sombra -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#80000000"/> <!-- Cor da sombra (transparente) -->
+            <solid android:color="#60000000"/> <!-- Cor da sombra (transparente) -->
             <corners android:radius="12dp"/>
         </shape>
     </item>
@@ -10,7 +10,7 @@
     <!-- Camada do fundo branco -->
     <item android:left="2dp" android:top="2dp">
         <shape android:shape="rectangle">
-            <solid android:color="#FFFFFF"/>
+            <solid android:color="#333333"/>
             <corners android:radius="12dp"/>
         </shape>
     </item>
