@@ -4,7 +4,7 @@
 Este é um aplicativo Android desenvolvido em **Kotlin** que permite converter moedas de forma simples e rápida. Ele utiliza a **arquitetura MVVM**, **Retrofit** para consumir APIs e **Room** para armazenamento local de dados.
 
 ## 🚀 Funcionalidades
-- ✅ Converter entre diferentes moedas (USD, BRL, EUR e outras)
+- ✅ Converter entre diferentes moedas (USD, BRL)
 - ✅ Atualização de taxas de câmbio via API
 - ✅ Interface intuitiva e responsiva
 - ✅ Histórico de conversões utilizando **Room**
